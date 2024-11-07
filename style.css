@@ -1,0 +1,162 @@
+:root {
+    --bg-color: #2D2D2D;
+    --text-color: #FFFFFF;
+    --button-bg: #404040;
+    --button-text: #FFFFFF;
+    --operator-color: #FF9500;
+    --display-bg: #1C1C1C;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] {
+    --bg-color: #F0F0F0;
+    --text-color: #000000;
+    --button-bg: #E0E0E0;
+    --button-text: #000000;
+    --operator-color: #FF9500;
+    --display-bg: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-color);
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 400px;
+    background: var(--bg-color);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.calculator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.display {
+    background: var(--display-bg);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 120px;
+}
+
+#history {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+#expression {
+    color: var(--text-color);
+    font-size: 18px;
+    margin: 10px 0;
+    min-height: 27px;
+}
+
+#result {
+    color: var(--text-color);
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.memory-display {
+    color: var(--text-color);
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.operator {
+    background: var(--operator-color);
+    color: white;
+}
+
+.equals {
+    background: var(--operator-color);
+    color: white;
+}
+
+.special {
+    background: #666;
+    color: white;
+}
+
+.clear {
+    background: #ff3b30;
+    color: white;
+}
+
+.delete {
+    background: #ff3b30;
+    color: white;
+}
+
+.function {
+    background: #5856d6;
+    color: white;
+}
